@@ -138,6 +138,20 @@ Why it matters:
 
 ---
 
+##  CI/CD Pipeline
+
+- **Continuous Integration (CI)**
+  - On every PR/push: run linters (flake8/ruff), type checks (mypy), unit/integration tests, security scans (`bandit`, `pip-audit`), and build Docker image.
+- **Continuous Delivery/Deployment (CD)**
+  - On `main` merge: push image to registry, run DB migrations, deploy to staging/production (e.g., via GitHub Actions).
+- **Suggested Tools**
+  - **GitHub Actions** for workflows, **Docker** for images, **docker-compose** for local parity, **Sentry** for release health, **Terraform** (optional) for IaC.
+
+Example workflow names:
+- `ci.yml`: lint + test + build
+- `deploy.yml`: build + push image + deploy + migrate
+
+---
 
 
 
