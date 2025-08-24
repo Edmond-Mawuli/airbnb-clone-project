@@ -95,6 +95,27 @@ By completing this project i will:
 
 ---
 
+##  Feature Breakdown
+
+- **User Management**
+  - Sign up/login (JWT), profile management, roles (host/guest/admin), password reset, KYC (optional).
+- **Property Management (Host)**
+  - Create/update listings with photos, amenities, pricing, availability calendar, and house rules.
+- **Search & Discovery**
+  - Filter by location, date range, price, guests; map view; pagination and sorting; cached hot queries.
+- **Booking System**
+  - Real-time availability checks, create/cancel bookings, compute totals, enforce rules (min nights, max guests).
+- **Payments**
+  - Provider integration (e.g., Stripe/Paystack), intent/capture flow, webhooks, refunds, receipts.
+- **Reviews & Ratings**
+  - Post-stay reviews with star ratings and comments; aggregate scores per property.
+- **Notifications**
+  - Email/SMS for booking status, reminders, and payment outcomes (via Celery workers).
+- **Admin & Moderation**
+  - Manage users/listings, resolve disputes, handle refunds, and monitor platform health.
+
+---
+
 
 
 
