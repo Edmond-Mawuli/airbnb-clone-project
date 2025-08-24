@@ -42,7 +42,31 @@ By completing this project i will:
 - **Security Engineer (shared role in small teams):** Threat modeling, security reviews, secret rotation, incident response planning.
 - **Technical Writer (shared role):** Maintains README, ADRs, API docs, runbooks, and onboarding materials.
 
+## 🧰 Technology Stack
+- **Language & Framework**
+  - **Python + Django**: Primary web framework, ORM, admin, REST (via DRF) and GraphQL (via Graphene).
+- **API Layers**
+  - **Django REST Framework (DRF)**: RESTful endpoints for public/mobile clients.
+  - **GraphQL (Graphene-Django)**: Flexible queries/mutations for web app and power users.
+- **Database**
+  - **MySQL** (or **PostgreSQL**): Relational data store for core entities (users, properties, bookings, payments, reviews).
+- **Caching & Async**
+  - **Redis**: Caching sessions, rate-limit counters, and hot queries.
+  - **Celery**: Background jobs (emails, payment webhooks, cleanup).
+- **Auth & Security**
+  - **JWT/OAuth2** (e.g., `django-rest-framework-simplejwt`) and **Django auth**.
+- **Containerization & Web**
+  - **Docker / Docker Compose**: Local dev & prod parity.
+  - **Nginx / Gunicorn**: Reverse proxy and WSGI app server.
+- **CI/CD**
+  - **GitHub Actions**: Lint, tests, security scans, build & deploy.
+- **Observability**
+  - **Sentry / OpenTelemetry / Prometheus + Grafana**: Error tracking & metrics (optional but recommended).
+
+
 ---
+
+
 
 
 
