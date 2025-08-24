@@ -116,6 +116,28 @@ By completing this project i will:
 
 ---
 
+## API Security
+
+- **Authentication**
+  - JWT-based auth for APIs; refresh/token rotation; secure cookie (httpOnly) or Authorization header.
+- **Authorization**
+  - Role & object-level permissions (hosts only manage their properties; guests only their bookings).
+- **Input Validation & Sanitization**
+  - DRF serializers/validators; strict schema for GraphQL; reject unknown fields; enforce types & ranges.
+- **Rate Limiting & Throttling**
+  - IP/user-based limits for login, search, and booking endpoints (e.g., Django throttling + Redis counters).
+- **Transport & Secrets**
+  - Enforce HTTPS; HSTS; rotate API keys; store secrets in CI/CD vault or GitHub Encrypted Secrets.
+- **Data Protection**
+  - Hash passwords (PBKDF2/Argon2); encrypt sensitive fields at rest (where applicable); GDPR-style deletion.
+- **Audit & Monitoring**
+  - Structured logs, security event auditing, anomaly detection, alerting (Sentry/Prometheus).
+
+Why it matters:
+- **User data** must remain confidential and intact and **Payments** demand strong integrity, non-repudiation, and secure handling of webhooks and the **Platform trust** depends on preventing abuse (fraud, brute force, scraping).
+
+---
+
 
 
 
