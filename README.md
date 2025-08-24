@@ -31,5 +31,20 @@ By completing this project i will:
 - Familiarity with Docker and CI tools (e.g., GitHub Actions).
 
 
+## 👥 Team Roles
+
+- **Product Manager (PM):** Owns scope and priorities, defines acceptance criteria, maintains roadmap, coordinates releases.
+- **Tech Lead / Architect:** Defines architecture, chooses patterns/tools, ensures non-functional requirements (security, scalability, observability).
+- **Backend Developer:** Implements APIs (REST/GraphQL), business logic, services, tests, and integrations; maintains code quality.
+- **Database Administrator (DBA):** Designs schema/indexes, manages migrations, performance tuning, backup/restore policies, data security.
+- **DevOps / Platform Engineer:** Owns CI/CD, infrastructure-as-code, containerization, monitoring/logging, secrets management.
+- **QA / Test Engineer:** Designs test plans, builds automated tests, validates features, tracks defects, ensures release readiness.
+- **Security Engineer (shared role in small teams):** Threat modeling, security reviews, secret rotation, incident response planning.
+- **Technical Writer (shared role):** Maintains README, ADRs, API docs, runbooks, and onboarding materials.
+
+---
+
+
+
 
 
