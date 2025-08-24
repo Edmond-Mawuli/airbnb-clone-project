@@ -1,7 +1,7 @@
 # airbnb-clone-project
 A comprehensive, real-world application that simulates building a scalable booking platform like Airbnb. The project emphasizes backend architecture, database design, API development, application security, CI/CD, and effective team collaboration.
 
----
+
 
 ##  Project Goals
 - Build a robust backend and API layer for a booking platform.
