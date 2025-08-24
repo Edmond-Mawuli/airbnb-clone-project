@@ -31,7 +31,7 @@ By completing this project i will:
 - Familiarity with Docker and CI tools (e.g., GitHub Actions).
 
 
-## 👥 Team Roles
+##  Team Roles
 
 - **Product Manager (PM):** Owns scope and priorities, defines acceptance criteria, maintains roadmap, coordinates releases.
 - **Tech Lead / Architect:** Defines architecture, chooses patterns/tools, ensures non-functional requirements (security, scalability, observability).
@@ -42,7 +42,7 @@ By completing this project i will:
 - **Security Engineer (shared role in small teams):** Threat modeling, security reviews, secret rotation, incident response planning.
 - **Technical Writer (shared role):** Maintains README, ADRs, API docs, runbooks, and onboarding materials.
 
-## 🧰 Technology Stack
+##  Technology Stack
 - **Language & Framework**
   - **Python + Django**: Primary web framework, ORM, admin, REST (via DRF) and GraphQL (via Graphene).
 - **API Layers**
@@ -63,6 +63,35 @@ By completing this project i will:
 - **Observability**
   - **Sentry / OpenTelemetry / Prometheus + Grafana**: Error tracking & metrics (optional but recommended).
 
+
+---
+
+##  Database Design
+
+### Key Entities & Fields
+- **User**
+  - `id (PK)`, `email (unique)`, `password_hash`, `full_name`, `phone`, `role (host|guest|admin)`, `created_at`
+- **Property**
+  - `id (PK)`, `host_id (FK->User)`, `title`, `description`, `type (apt, house, room)`, `address`, `city`, `country`, `lat`, `lng`, `nightly_price`, `max_guests`, `created_at`
+- **PropertyImage**
+  - `id (PK)`, `property_id (FK)`, `url`, `is_primary (bool)`, `created_at`
+- **Booking**
+  - `id (PK)`, `guest_id (FK->User)`, `property_id (FK)`, `check_in (date)`, `check_out (date)`, `guests_count`, `status (pending|confirmed|cancelled|completed)`, `total_amount`, `created_at`
+- **Payment**
+  - `id (PK)`, `booking_id (FK)`, `provider (stripe, paystack, etc.)`, `amount`, `currency`, `status (authorized|captured|refunded|failed)`, `transaction_ref`, `created_at`
+- **Review**
+  - `id (PK)`, `booking_id (FK)`, `author_id (FK->User)`, `property_id (FK)`, `rating (1–5)`, `comment`, `created_at`
+- **Availability (optional optimization)**
+  - `id (PK)`, `property_id (FK)`, `date`, `is_available (bool)`, `price_override (nullable)`
+
+### Relationships (high level)
+- A **User (host)** can own many **Properties**.
+- A **User (guest)** can make many **Bookings**.
+- A **Booking** belongs to one **Property** and one **guest (User)**.
+- A **Payment** belongs to one **Booking**.
+- A **Review** is written by a **User** for a **Property**, typically after a completed **Booking**.
+- **PropertyImage** belongs to a **Property**.
+- Optional **Availability** rows help fast availability checks and dynamic pricing.
 
 ---
 
